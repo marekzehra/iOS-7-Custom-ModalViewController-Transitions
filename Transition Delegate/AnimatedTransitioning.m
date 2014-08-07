@@ -7,8 +7,6 @@
 //
 
 #import "AnimatedTransitioning.h"
-#import "MainViewController.h"
-#import "SecondViewController.h"
 
 @implementation AnimatedTransitioning
 
@@ -23,8 +21,8 @@
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
     UIView *inView = [transitionContext containerView];
-    SecondViewController *toVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    MainViewController *fromVC = (MainViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     
     [inView addSubview:toVC.view];
     
